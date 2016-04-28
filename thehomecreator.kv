@@ -1,0 +1,26 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+<TheHomeCreator>:
+	transition: FadeTransition()
+	Screen:
+		Label:
+			markup:True
+			text: '[size=58px][i][b] [color=#f16103]Puppet[/color][/b][/i][/size] '
+
+		Label:
+			markup:True
+			text: '[size=20px][i][b] [color=#416103]Puppet is an application developed by MONISH K NAIR [/color][color=#909090][sup]the ultimate python coder[/sup][/color][/b][/i][/size] '
+			pos_hint:{'center_x':.5,'center_y':.35}
+
+		Button:
+			text:"Open"
+			pos_hint:{'center_x':.5,'top':.15}
+			size_hint:None,None
+			size:150,50
+			background_normal:'button.png'
+			background_down:'down.png'
+			border:6,6,6,6
+			on_press:root.current='homescreen'
+	
+	HomeScreen:
+			

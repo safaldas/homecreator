@@ -1,0 +1,63 @@
+#:import generalarea generalarea
+<GeneralButton@Button>:
+	size_hint:None,None
+	size:70,50
+
+
+<GeneralArea>:
+	id:general_area
+	size_hint:None,None
+	next:next
+	prev:prev
+	save:save
+	tool_box:tool_box
+	drawing_space:drawing_space
+	AnchorLayout:
+		anchor_x:'left'
+		anchor_y:'top'
+		drawing_space:drawing_space 
+
+		ToolBox:
+			id:tool_box
+			drawing_space:drawing_space 
+			size_hint:None,1
+			width:100
+			canvas.before:
+				Color:
+					rgba:(0.1,0.2,0.2,1)
+				Line:
+					rectangle: 0,0,self.width - 4,self.height - 4
+		
+	AnchorLayout:
+		anchor_x:'right'
+		anchor_y:'top'
+		next:next
+		drawing_space:drawing_space
+		general_area:general_area
+		tool_box:tool_box
+		RelativeLayout:	
+			size_hint:None,None
+			width:root.width - tool_box.width
+			height:root.height 	
+			drawing_space:drawing_space
+			DrawingSpace:
+				id:drawing_space
+				tool_box:tool_box
+			GeneralButton:
+				id:next
+				text:'>'
+				pos_hint:{'top':.5,'right':.97}
+				on_press:self.parent.parent.general_area.load_next()
+			GeneralButton:
+				id:prev
+				text:'<'
+				pos_hint:{'top':.5,'left':1}
+				on_press:self.parent.parent.general_area.load_previous()
+
+			GeneralButton:
+				id:save
+				text:'Save'
+				pos_hint:{'top':.1,'right':.5}
+				background_color:(0,1,0,1)
+				on_press: self.parent.parent.general_area.saveimage()
+
