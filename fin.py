@@ -7,6 +7,7 @@ bbuf = []
 pc = []
 puppet =[]
 scale = 30
+translate = 100
 
 def generateroom(n):
 
@@ -27,8 +28,6 @@ def generateroom(n):
 	for a in range(math.factorial(len(p))):	 # taking each permutation
 
 	        #abuf = [(0,0)]              #abuf initialised to (0,0)
-
-
 		pc.append((np.random.permutation(len(p))))
 	for pp in pc:
 		abuf = [(0,0)]
@@ -77,7 +76,7 @@ def generateroom(n):
 
 			if ee == 1 or ee == 2:
 				print c,d,xa,ya
-				puppet.append((c*scale,d*scale,xa*scale,ya*scale))                           #this is it
+				puppet.append((c*scale + translate,d*scale+ translate,xa*scale,ya*scale))                           #this is it
 			#	out.append((c,d,xa,ya))
 				bbuf.append((c,d,xa,ya))
 
@@ -111,7 +110,7 @@ def generateroom(n):
 						error = 1
 				if error:
 					print c,d,xa,ya
-					puppet.append((c*scale,d*scale,xa*scale,ya*scale))                           #this is it
+					puppet.append((c*scale+ translate,d*scale+ translate,xa*scale,ya*scale))                           #this is it
 					out.append((c,d,xa,ya))
 					bbuf.append((c,d,xa,ya))
 
