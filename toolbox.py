@@ -19,7 +19,7 @@ class ToolBox(BoxLayout):
 	def calculate(self,rooms,next):	
 		noofrooms = self.noofrooms = int(self.rooms.text)
 		generatebutton = self.generatebutton
-		
+		self.statusvalue = 0
 		self.list_of_rooms = fin.generateroom(noofrooms)
 		
 		self.draw(self.tool_box,next)
@@ -34,7 +34,7 @@ class ToolBox(BoxLayout):
 		ds = self.parent.drawing_space
 		list_of_rooms = self.list_of_rooms
 			
-		print nbyfn 
+		
 		print "value of next: " ,next
 
 
@@ -44,29 +44,38 @@ class ToolBox(BoxLayout):
 			Color(0,1,0)
 			#for q in xrange(statusvalue, nbyfn ):
 			for x in xrange(0,noofrooms ):
-				print self.statusvalue + x
-				Line(rectangle=list_of_rooms[self.statusvalue +x])
-				print "coordinates used are : " ,x ," " ,list_of_rooms[self.statusvalue + x]
+				print statusvalue + x
+				Line(rectangle=list_of_rooms[statusvalue +x])
+				print "coordinates used are : " ,x ," " ,list_of_rooms[statusvalue + x]
 
 		#check the status value which points to the list of rooms array if it exeeds or is less update status value header
 		if next ==0:
 			self.statusvalue = statusvalue + noofrooms
+			statusvalue += noofrooms
 		elif next == 1:
-			if statusvalue > nbyfn:
+			self.statusvalue = statusvalue + noofrooms
+			statusvalue += noofrooms
+			if self.statusvalue >= nbyfn:
 				self.statusvalue=0
-			else:
-				self.statusvalue = statusvalue + noofrooms
+				statusvalue = 0
+				print "going back"
+
 		elif next == 2:
-			if statusvalue < nbyfn:
-				self.statusvalue=0
-			else:
-				self.statusvalue = statusvalue - noofrooms
+			
+			if self.statusvalue <= 0:
+				self.statusvalue=nbyfn
+				statusvalue=nbyfn
+				print "going to start value"
+			self.statusvalue = statusvalue - noofrooms
+			statusvalue -= noofrooms	
 		else:
-			print "Status Value OutofBounds Error :)"
+			print "next invalid:)"
+		
 
 		
 		#next value can be 1(next) or 2(prev) 	
 		print "current statusvalue is " , statusvalue
+		print "current self.statusvalue is:" , self.statusvalue
 
 
 
