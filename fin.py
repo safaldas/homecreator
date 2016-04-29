@@ -13,10 +13,10 @@ def generateroom(n):
 
 	xa = 0
 	ya = 0
-	m=0
+	m=0 
 	ee = 0
-	#w = int(input("enter width along x axis : "))		# plot width
-	#h = int(input("enter height along y axis : "))		# plot height
+	w = 120 #int(input("enter width along x axis : "))		# plot width
+	h = 120 #int(input("enter height along y axis : "))		# plot height
 	#n = int(input("enter no of rooms: "))			# no of rooms
 
 	p = []
@@ -87,6 +87,9 @@ def generateroom(n):
 				c,d = abuf[0][0],abuf[0][1]
 
 			else:
+				if c+xa < w or d+ya < h:
+					print "plan is huge than plot"
+					break
 				#tp.append(c,d,xa,ya)
 				for bp in bbuf:
 					a1 = xa/2
