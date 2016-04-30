@@ -6,15 +6,28 @@
 	area:area
 	rooms:rooms
 	bedroom:bedroom
+	budget:budget
 	generatebutton:generatebutton
+	Label:
+		text:'Budget(lakhs)'
+		size_hint:None,None
+		size:100,34
+	Spinner:
+		id:budget
+		text:'select'
+		values:'10','15','20','30','40'
+		size_hint:None,None
+		size:90,34
+		pos_hint:{'center_x':.5,'center_y':.5}
+		on_text:self.parent.set_area()
 	Label:
 		text:'Area(sq.ft)'
 		size_hint:None,None
 		size:100,34
 	Spinner:
 		id:area
-		text:'900'
-		values:'1000','1500','2000','2500'
+		text:'600'
+		values:'600','650','700'
 		size_hint:None,None
 		size:90,34
 		pos_hint:{'center_x':.5,'center_y':.5}
@@ -25,11 +38,12 @@
 		size:100,34
 	Spinner:
 		id:rooms
-		text:'3'
-		values:'2','3','4','5','6','7'
+		text:'5'
+		values:'5','6','7'
 		size_hint:None,None
 		size:90,34
 		pos_hint:{'center_x':.5,'center_y':.5}
+		disabled:True
 		
 	Label:
 		text:'Bedroom'
@@ -78,6 +92,6 @@
 		size:90,44
 		pos_hint:{'center_x':.5,'center_y':.5}
 		background_color: (.83,.4,.82,1)
-		on_press:self.parent.calculate(rooms.text,0)
+		on_press:self.parent.calculate()
 	Label:
 		text:''
