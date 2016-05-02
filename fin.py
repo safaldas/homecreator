@@ -1,6 +1,7 @@
 import numpy as np
 import sys
 import math
+import rooms
 
 abuf = []
 bbuf = []
@@ -40,29 +41,21 @@ def generateroom(n):
 			ee = ee + 1
 
 			if b == 0:	# master bed  width and length
-				xa = 6
-				ya = 5
+				room1 = rooms.bedroom()
 			if b == 1:	# kitchen
-				xa = 5
-				ya = 4
+				room1 = rooms.bedroom()
 			if b == 2:	# bathroom
-				xa = 2
-				ya = 2
+				room1 = rooms.bedroom()
 			if b == 3:	# bedroom2
-				xa = 3
-				ya = 2
+				room1 = rooms.bedroom()
 			if b == 4:	# living space
-				xa = 6
-				ya = 5
+				room1 = rooms.bedroom()
 			if b == 5:	# another bed space
-				xa = 5
-				ya = 5
+				room1 = rooms.bedroom()
 			if b == 6: # car porch
-				xa == 5
-				ya == 3
+				room1 = rooms.bedroom()
 			if b == 7: # dining
-				xa = 5
-				ya = 5
+				room1 = rooms.bedroom()
 
 
 

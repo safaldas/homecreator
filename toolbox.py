@@ -6,7 +6,7 @@ from kivy.graphics import Line,Color,Rectangle
 from kivy.uix.widget import Widget
 from kivy.graphics.context_instructions import PushMatrix,PopMatrix
 
-
+import rooms 
 
 class ToolBox(BoxLayout):
 	
@@ -28,11 +28,7 @@ class ToolBox(BoxLayout):
 	def calculate(self):
 		ds = self.parent.drawing_space
 
-		bedroom1 = Widget(size = (100,100))
-		with bedroom1.canvas:
-			Rectangle(source="images/bedroom10x10.png", pos=bedroom1.pos,size=bedroom1.size)
-			ds.add_widget(bedroom1)
-		bedroom2 = Widget(size = (140,120))
-		with bedroom2.canvas:
-			Rectangle(source="images/bedroom14x12.png", pos=(100,0),size=bedroom2.size)
-			ds.add_widget(bedroom2)
+		room1 = rooms.bedroom()
+		room1.draw(1)
+		ds.add_widget(room1)
+		
