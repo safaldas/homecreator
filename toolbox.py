@@ -12,6 +12,13 @@ class ToolBox(BoxLayout):
 	list_of_rooms=[]
 	statusvalue =0
 	list_of_plans =[]
+	# def __init__(self,**kwargs):
+	# 	for y in xrange(0,400,10):
+	# 		for x in xrange(0,600,10):
+	# 			with self.drawing_space.canvas:
+	# 				Color(0, 1, 0, .2)
+	# 				Line(rectangle=[x,y,10,10])
+
 
 
 
