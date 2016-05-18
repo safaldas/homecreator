@@ -111,9 +111,9 @@ def generateroom(n):
 						error = 1
 					if  c2 < d2:
 						error = 1
-				if error:
+				if not error:
 					print c,d,xa,ya
-					puppet.append((c*scale+ translate,d*scale+ translate,xa*scale,ya*scale))                           #this is it
+					puppet.append((c+ translate,d+ translate,xa*scale,ya*scale))         #this is it
 					out.append((c,d,xa,ya))
 					bbuf.append((c,d,xa,ya))
 

@@ -20,6 +20,7 @@ class ToolBox(BoxLayout):
 		noofrooms = self.noofrooms = int(self.rooms.text)
 		generatebutton = self.generatebutton
 		self.statusvalue = 0
+		print "new generate function called and statusvalue is ", self.statusvalue
 		self.list_of_rooms = fin.generateroom(noofrooms)
 		
 		self.draw(self.tool_box,next)
