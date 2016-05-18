@@ -69,7 +69,7 @@ def generateroom(n):
 
 			if ee == 1 or ee == 2:
 				print c,d,xa,ya
-				puppet.append((c*scale + translate,d*scale+ translate,xa*scale,ya*scale))                           #this is it
+				puppet.append((c*scale + translate,d*scale+ translate,xa*scale,ya*scale))      #this is it
 			#	out.append((c,d,xa,ya))
 				bbuf.append((c,d,xa,ya))
 

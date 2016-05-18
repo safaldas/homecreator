@@ -17,11 +17,21 @@ class ToolBox(BoxLayout):
 			area.values =['600','650','700']
 			area.text = '600'
 			print 'area updated to ',area.text
-		if int(budget.text) == 15:
+		elif int(budget.text) == 15:
 			area.values =['750','800','850']
 			area.text = '750'
 			print 'area updated to ',area.text
-
+		elif int(budget.text) == 20:
+			area.values =['900','950','1000']
+			area.text = '900'
+			print 'area updated to ',area.text
+		elif int(budget.text) == 30:
+			area.values =['1100','1200','1300']
+			area.text = '1100'
+			print 'area updated to ',area.text
+		else:
+			print "budget not defined cant update area"
+		print area.text
 		area.disabled = False
 
 
