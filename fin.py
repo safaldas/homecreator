@@ -1,3 +1,5 @@
+#not used now as anew algoithm is needed to arrange the rooms object
+#                this part is not functionals
 import numpy as np
 import sys
 import math
